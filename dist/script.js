@@ -1001,6 +1001,12 @@ function () {
         item.addEventListener('click', function () {
           _this.plusSlides(1);
         });
+        item.parentNode.previousElementSibling.addEventListener('click', function (e) {
+          e.preventDefault();
+          _this.slideIndex = 1;
+
+          _this.showSlides(_this.slideIndex);
+        });
       });
       this.showSlides(this.slideIndex);
     }
